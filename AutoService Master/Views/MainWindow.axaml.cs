@@ -9,6 +9,8 @@ public partial class MainWindow : Window
     private DashboardView? _dashboardView;
     private ClientsView? _clientsView;
     private SettingsView? _settingsView;
+    private OrdersView? _ordersView;
+    
     public MainWindow()
     {
         InitializeComponent();
@@ -27,6 +29,7 @@ public partial class MainWindow : Window
             };
             _clientsView = new ClientsView();
             _settingsView = new SettingsView();
+            _ordersView = new OrdersView();
             
             MainContentArea.Content = _dashboardView;
         };
@@ -47,7 +50,12 @@ public partial class MainWindow : Window
     {
         MainContentArea.Content = _clientsView;
     }
-    private void NavSettings_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+
+    private void NavOrders_Click(object sender, RoutedEventArgs e)
+    {
+        MainContentArea.Content = _ordersView;
+    }
+    private void NavSettings_Click(object sender, RoutedEventArgs e)
     {
         MainContentArea.Content = _settingsView;
     }

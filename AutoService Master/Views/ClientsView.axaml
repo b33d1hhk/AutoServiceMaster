@@ -11,7 +11,7 @@
     <Grid ColumnDefinitions="*, 300" Margin="20">
         
         <Grid Grid.Column="0" RowDefinitions="Auto, *" Margin="0,0,20,0">
-            <TextBlock Grid.Row="0" Text="Клієнти" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+            <TextBlock Grid.Row="0" Text="{DynamicResource Txt_Clients}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
             
             <ListBox Grid.Row="1" ItemsSource="{Binding Clients}" Background="Transparent" BorderThickness="0">
                 <ListBox.ItemTemplate>
@@ -20,21 +20,21 @@
                             <Grid ColumnDefinitions="2*, 1.5*, 2*, Auto">
                                 <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding FullName}" FontWeight="Bold" FontSize="16" Foreground="White"/>
-                                    <TextBlock Text="ПІБ" FontSize="12" Foreground="#888888"/>
+                                    <TextBlock Text="{DynamicResource FullName}" FontSize="12" Foreground="#888888"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding PhoneNumber}" Foreground="#E0E0E0"/>
-                                    <TextBlock Text="Телефон" FontSize="12" Foreground="#888888"/>
+                                    <TextBlock Text="{DynamicResource Phone}" FontSize="12" Foreground="#888888"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="2" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding CarInfo}" Foreground="#4AA9FF" FontWeight="SemiBold"/>
-                                    <TextBlock Text="Автомобіль" FontSize="12" Foreground="#888888"/>
+                                    <TextBlock Text="{DynamicResource Car}" FontSize="12" Foreground="#888888"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
-                                    <Button Content="✏️" Background="Transparent" ToolTip.Tip="Редагувати"
+                                    <Button Content="✏️" Background="Transparent" ToolTip.Tip="{DynamicResource Edit}"
                                             Command="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).EditClientCommand}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="❌" Background="Transparent" ToolTip.Tip="Видалити"
+                                    <Button Content="❌" Background="Transparent" ToolTip.Tip="{DynamicResource Delete}"
                                             IsVisible="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).IsAdmin}"
                                             Command="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).DeleteClientCommand}"
                                             CommandParameter="{Binding}"/>
@@ -48,20 +48,20 @@
         
         <Border Grid.Column="1" Background="#252526" CornerRadius="10" Padding="20" VerticalAlignment="Top">
             <StackPanel Spacing="15">
-                <TextBlock Text="Додати нового клієнта" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+                <TextBlock Text="{DynamicResource AddNewClient}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
                 <StackPanel>
-                    <TextBlock Text="ПІБ клієнта *" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+                    <TextBlock Text="{DynamicResource FullNameClient}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
                     <TextBox Text="{Binding NewFullName}" Watermark="Напр. Іванов Іван" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="Номер телефону" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+                    <TextBlock Text="{DynamicResource PhoneNumber}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
                     <TextBox Text="{Binding NewPhone}" Watermark="+380..." Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="Автомобіль (Марка, Модель)" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+                    <TextBlock Text="{DynamicResource CarModel}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
                     <TextBox Text="{Binding NewCarInfo}" Watermark="Напр. Toyota Camry" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
                 </StackPanel>
-                <Button Content="Зберегти клієнта" 
+                <Button Content="{DynamicResource SaveClient}" 
                         Command="{Binding SaveClientCommand}"
                         Background="#4AA9FF" Foreground="White" 
                         FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"

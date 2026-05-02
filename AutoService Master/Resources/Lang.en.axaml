@@ -6,4 +6,27 @@
     <x:String x:Key="Txt_Settings">Settings</x:String>
     <x:String x:Key="Txt_AddClient">+ Add Client</x:String>
     <x:String x:Key="Txt_SaveClient">Save Client</x:String>
+    <x:String x:Key="FullName">FN</x:String>
+    <x:String x:Key="Phone">Phone</x:String>
+    <x:String x:Key="Car">Car</x:String>
+    <x:String x:Key="AddNewClient">Add a new customer</x:String>
+    <x:String x:Key="FullNameClient">Client's FN *</x:String>
+    <x:String x:Key="PhoneNumber">Phone number</x:String>
+    <x:String x:Key="CarModel">Car (Make, Model)</x:String>
+    <x:String x:Key="Delete">Remove</x:String>
+    <x:String x:Key="Edit">Edit</x:String>
+    <x:String x:Key="SaveClient">Save the client</x:String>
+    <x:String x:Key="TotalClients">Total customers</x:String>
+    <x:String x:Key="CarRepair">Car under repair</x:String>
+    <x:String x:Key="Checkout">Checkout for today</x:String>
+    <x:String x:Key="RecentAction">Recent actions</x:String>
+    <x:String x:Key="ListRecentAction">A list of recent orders or action history will be displayed here...</x:String>
+    <x:String x:Key="Development">Section under development</x:String>
+    <x:String x:Key="Advertisement">The order management page will appear in the course.</x:String>
+    <x:String x:Key="DesignTheme">Design theme</x:String>
+    <x:String x:Key="SwitchTheme">Switch between light and dark theme</x:String>
+    <x:String x:Key="Dark">dark</x:String>
+    <x:String x:Key="Light">light</x:String>
+    <x:String x:Key="Language">Interface language</x:String>
+    
 </ResourceDictionary>

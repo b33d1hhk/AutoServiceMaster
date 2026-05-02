@@ -1,9 +1,31 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <x:String x:Key="Txt_Dashboard">Головна (Dashboard)</x:String>
-    <x:String x:Key="Txt_Clients">Клієнти</x:String>
+    <x:String x:Key="Txt_Dashboard">Головна</x:String>
+    <x:String x:Key="Txt_Clients">Клієнти</x:String>    
     <x:String x:Key="Txt_Orders">Замовлення</x:String>
     <x:String x:Key="Txt_Settings">Налаштування</x:String>
     <x:String x:Key="Txt_AddClient">+ Додати клієнта</x:String>
-    <x:String x:Key="Txt_SaveClient">Зберегти клієнта</x:String>
+    <x:String x:Key="FullName">ПІБ</x:String>
+    <x:String x:Key="Phone">Телефон</x:String>
+    <x:String x:Key="Car">Автомобіль</x:String>
+    <x:String x:Key="AddNewClient">Додати нового клієнта</x:String>
+    <x:String x:Key="FullNameClient">ПІБ клієнта *</x:String>
+    <x:String x:Key="PhoneNumber">Номер Телефону</x:String>
+    <x:String x:Key="CarModel">Автомобіль (Марка, Модель)</x:String>
+    <x:String x:Key="Delete">Видалити</x:String>
+    <x:String x:Key="Edit">Редагувати</x:String>
+    <x:String x:Key="SaveClient">Зберегти клієнта</x:String>
+    <x:String x:Key="TotalClients">Всього клієнтів</x:String>
+    <x:String x:Key="CarRepair">Авто в ремонті</x:String>
+    <x:String x:Key="Checkout">Каса за сьогодні</x:String>
+    <x:String x:Key="RecentAction">Останні дії</x:String>
+    <x:String x:Key="ListRecentAction">Тут буде виводитися список останніх замовлень або історія дій...</x:String>
+    <x:String x:Key="Development">Розділ у розробці</x:String>
+    <x:String x:Key="Advertisement">Сторінка керування замовленнями з'явиться в курсовій.</x:String>
+    <x:String x:Key="DesignTheme">Тема оформлення</x:String>
+    <x:String x:Key="SwitchTheme">Перемикання між світлою та темною темою</x:String>
+    <x:String x:Key="Dark">Темна</x:String>
+    <x:String x:Key="Light">Світла</x:String>
+    <x:String x:Key="Language">Мова інтерфейсу</x:String>
+    
 </ResourceDictionary>
