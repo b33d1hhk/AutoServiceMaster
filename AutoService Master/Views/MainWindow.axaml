@@ -9,12 +9,22 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="AutoService_Master">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <Grid ColumnDefinitions="250, *">
+        
+        <Border Grid.Column="0" Background="#252526" BorderBrush="#3E3E42" BorderThickness="0,0,1,0">
+            <StackPanel Margin="10, 20">
+                <TextBlock Text="AutoService" FontSize="22" FontWeight="Black" Foreground="White" Margin="15,0,0,0"/>
+                <TextBlock Text="MASTER" FontSize="18" FontWeight="Bold" Foreground="#4AA9FF" Margin="15,0,0,30"/>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Content="Головна (Dashboard)" Classes="NavButton" Click="NavDashboard_Click"/>
+                <Button Content="Клієнти" Classes="NavButton" Click="NavClients_Click"/>
+                <Button Content="Замовлення" Classes="NavButton"/>
+                <Button Content="Налаштування" Classes="NavButton"/>
+            </StackPanel>
+        </Border>
+
+        <ContentControl x:Name="MainContentArea" Grid.Column="1" Margin="20"/>
+
+    </Grid>
 
 </Window>
