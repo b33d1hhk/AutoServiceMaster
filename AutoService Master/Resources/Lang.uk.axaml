@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:String x:Key="Txt_Dashboard">Головна (Dashboard)</x:String>
+    <x:String x:Key="Txt_Clients">Клієнти</x:String>
+    <x:String x:Key="Txt_Orders">Замовлення</x:String>
+    <x:String x:Key="Txt_Settings">Налаштування</x:String>
+    <x:String x:Key="Txt_AddClient">+ Додати клієнта</x:String>
+    <x:String x:Key="Txt_SaveClient">Зберегти клієнта</x:String>
+</ResourceDictionary>

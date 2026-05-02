@@ -9,6 +9,9 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>
+        <AvaloniaXaml Remove="Resources\Lang.en.axaml.axaml" />
+        <AvaloniaResource Include="Resources\Lang.en.axaml" />
+        <AvaloniaXaml Remove="Resources\Lang.uk.axaml.axaml" />
     </ItemGroup>
 
     <ItemGroup>

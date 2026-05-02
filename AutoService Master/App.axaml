@@ -22,4 +22,11 @@
             <Setter Property="Margin" Value="0, 2"/>
         </Style>
     </Application.Styles>
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceInclude Source="avares://AutoService Master/Resources/Lang.uk.axaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
 </Application>

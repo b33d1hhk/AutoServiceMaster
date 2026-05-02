@@ -26,6 +26,12 @@ build_property.EnableCodeStyleSeverity =
 [/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Resources/Lang.en.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Resources/Lang.uk.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/ClientsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -33,4 +39,7 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/SettingsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
