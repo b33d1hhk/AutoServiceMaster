@@ -1,3 +1,4 @@
+using AutoService_Master.ViewModels;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -9,5 +10,7 @@ public partial class ClientsView : UserControl
     public ClientsView()
     {
         InitializeComponent();
+        
+        DataContext = new ClientsViewModel();
     }
 }
