@@ -12,25 +12,75 @@ public partial class ClientsViewModel : ViewModelBase
     
     [ObservableProperty]
     private ObservableCollection<Client> _clients;
+    
+    [ObservableProperty]
+    private string _newFullName = string.Empty;
 
+    [ObservableProperty]
+    private string _newPhone = string.Empty;
+
+    [ObservableProperty]
+    private string _newCarInfo = string.Empty;
+
+    private Client? _editingClient;
     public ClientsViewModel()
     {
         _dataService = new JsonDataService();
-        
         _clients = new ObservableCollection<Client>(_dataService.LoadClients());
+    }
+    [RelayCommand]
+    private void EditClient(Client clientToEdit)
+    {
+        _editingClient = clientToEdit;
+            
+        NewFullName = clientToEdit.FullName;
+        NewPhone = clientToEdit.PhoneNumber;
+        NewCarInfo = clientToEdit.CarInfo;
     }
     
     [RelayCommand]
-    private void AddClient()
+    private void SaveClient()
     {
-        var newClient = new Client 
-        { 
-            FullName = "Новий Клієнт", 
-            PhoneNumber = "+380", 
-            CarInfo = "Не вказано" 
-        };
-        
-        Clients.Add(newClient);
+        if (string.IsNullOrWhiteSpace(NewFullName))
+        {
+            return; 
+        }
+
+        if (_editingClient == null)
+        {   
+            var newClient = new Client 
+            { 
+                FullName = NewFullName, 
+                PhoneNumber = NewPhone, 
+                CarInfo = NewCarInfo 
+            };
+            Clients.Add(newClient);
+        }
+        else
+        {
+            _editingClient.FullName = NewFullName;
+            _editingClient.PhoneNumber = NewPhone;
+            _editingClient.CarInfo = NewCarInfo;
+            
+            int index = Clients.IndexOf(_editingClient);
+            Clients[index] = _editingClient;
+
+            _editingClient = null;
+        }
         _dataService.SaveClients(Clients);
+        
+        NewFullName = string.Empty;
+        NewPhone = string.Empty;
+        NewCarInfo = string.Empty;
+    }
+
+    [RelayCommand]
+    private void DeleteClient(Client clientToDelete)
+    {
+        if (clientToDelete != null)
+        {
+            Clients.Remove(clientToDelete);
+            _dataService.SaveClients(Clients);
+        }
     }
 }
