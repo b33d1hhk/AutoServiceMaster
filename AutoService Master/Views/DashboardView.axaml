@@ -2,10 +2,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AutoService_Master.ViewModels"
+             x:DataType="vm:DashboardViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AutoService_Master.Views.DashboardView">
-    <StackPanel Margin="20">
-        <TextBlock Text="Дашборд" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
-        <TextBlock Text="Тут буде статистика СТО (кількість авто в ремонті, прибуток тощо)." Foreground="#AAAAAA"/>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Margin="30" Spacing="20">
+            
+            <TextBlock Text="Головна панель" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+            <WrapPanel ItemWidth="250" ItemHeight="130">
+                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20" 
+                        BoxShadow="0 4 15 0 #11000000">
+                    <StackPanel>
+                        <TextBlock Text="Всього клієнтів" FontSize="14" Foreground="#AAAAAA"/>
+                        <TextBlock Text="{Binding TotalClients}" FontSize="36" FontWeight="Bold" Foreground="#4AA9FF" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20"
+                        BoxShadow="0 4 15 0 #11000000">
+                    <StackPanel>
+                        <TextBlock Text="Авто в ремонті" FontSize="14" Foreground="#AAAAAA"/>
+                        <TextBlock Text="{Binding ActiveOrders}" FontSize="36" FontWeight="Bold" Foreground="#FFB020" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20"
+                        BoxShadow="0 4 15 0 #11000000">
+                    <StackPanel>
+                        <TextBlock Text="Каса за сьогодні" FontSize="14" Foreground="#AAAAAA"/>
+                        <TextBlock Text="{Binding TodayRevenue}" FontSize="36" FontWeight="Bold" Foreground="#47D16E" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+            <TextBlock Text="Останні дії" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="0,20,0,10"/>
+            <Border Background="#252526" CornerRadius="12" Padding="20" Height="200">
+                <TextBlock Text="Тут буде виводитися список останніх замовлень або історія дій..." 
+                           Foreground="#808080" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

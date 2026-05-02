@@ -21,7 +21,10 @@ public partial class MainWindow : Window
             LoginContentArea.IsVisible = false;
             MainAppLayout.IsVisible = true;
             
-            _dashboardView = new DashboardView();
+            _dashboardView = new DashboardView 
+            { 
+                DataContext = new DashboardViewModel()
+            };
             _clientsView = new ClientsView();
             _settingsView = new SettingsView();
             
@@ -33,6 +36,10 @@ public partial class MainWindow : Window
     }
     private void NavDashboard_Click(object sender, RoutedEventArgs e)
     {
+        if (_dashboardView?.DataContext is DashboardViewModel viewModel)
+        {
+            viewModel.UpdateStatistics();
+        }
         MainContentArea.Content = _dashboardView;
     }
 
