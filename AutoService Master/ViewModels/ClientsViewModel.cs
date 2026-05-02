@@ -12,17 +12,15 @@ public partial class ClientsViewModel : ViewModelBase
     
     [ObservableProperty]
     private ObservableCollection<Client> _clients;
-    
     [ObservableProperty]
     private string _newFullName = string.Empty;
-
     [ObservableProperty]
     private string _newPhone = string.Empty;
-
     [ObservableProperty]
     private string _newCarInfo = string.Empty;
 
     private Client? _editingClient;
+    public bool IsAdmin => AuthService.Instance.IsAdmin;
     public ClientsViewModel()
     {
         _dataService = new JsonDataService();

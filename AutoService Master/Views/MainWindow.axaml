@@ -8,23 +8,22 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="AutoService_Master">
+    <Grid>
+        <Grid x:Name="MainAppLayout" ColumnDefinitions="250, *" IsVisible="False">
 
-    <Grid ColumnDefinitions="250, *">
-        
-        <Border Grid.Column="0" Background="#252526" BorderBrush="#3E3E42" BorderThickness="0,0,1,0">
-            <StackPanel Margin="10, 20">
-                <TextBlock Text="AutoService" FontSize="22" FontWeight="Black" Foreground="White" Margin="15,0,0,0"/>
-                <TextBlock Text="MASTER" FontSize="18" FontWeight="Bold" Foreground="#4AA9FF" Margin="15,0,0,30"/>
+            <Border Grid.Column="0" Background="#252526" BorderBrush="#3E3E42" BorderThickness="0,0,1,0">
+                <StackPanel Margin="10, 20">
+                    <TextBlock Text="AutoService" FontSize="22" FontWeight="Black" Foreground="White" Margin="15,0,0,0" />
+                    <TextBlock Text="MASTER" FontSize="18" FontWeight="Bold" Foreground="#4AA9FF" Margin="15,0,0,30" />
 
-                <Button Content="{DynamicResource Txt_Dashboard}" Classes="NavButton" Click="NavDashboard_Click"/>
-                <Button Content="{DynamicResource Txt_Clients}" Classes="NavButton" Click="NavClients_Click"/>
-                <Button Content="{DynamicResource Txt_Orders}" Classes="NavButton"/>
-                <Button Content="{DynamicResource Txt_Settings}" Classes="NavButton" Click="NavSettings_Click"/>
-            </StackPanel>
-        </Border>
-
-        <ContentControl x:Name="MainContentArea" Grid.Column="1" Margin="20"/>
-
+                    <Button Content="{DynamicResource Txt_Dashboard}" Classes="NavButton" Click="NavDashboard_Click" />
+                    <Button Content="{DynamicResource Txt_Clients}" Classes="NavButton" Click="NavClients_Click" />
+                    <Button Content="{DynamicResource Txt_Orders}" Classes="NavButton" />
+                    <Button Content="{DynamicResource Txt_Settings}" Classes="NavButton" Click="NavSettings_Click" />
+                </StackPanel>
+            </Border>
+            <ContentControl x:Name="MainContentArea" Grid.Column="1" Margin="20" />
+        </Grid>
+        <ContentControl x:Name="LoginContentArea" />
     </Grid>
-
 </Window>

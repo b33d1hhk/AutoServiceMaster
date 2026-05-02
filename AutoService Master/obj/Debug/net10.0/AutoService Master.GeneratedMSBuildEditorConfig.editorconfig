@@ -38,6 +38,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/DashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/LoginView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
