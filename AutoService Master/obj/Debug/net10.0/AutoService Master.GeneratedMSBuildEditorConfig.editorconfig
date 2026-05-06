@@ -17,35 +17,38 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoService_Master
-build_property.ProjectDir = /Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/
+build_property.ProjectDir = C:\Users\nasty\source\repos\AutoServiceMaster\AutoService Master\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/App.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Resources/Lang.en.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Resources/Lang.en.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Resources/Lang.uk.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Resources/Lang.uk.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/ClientsView.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/ClientsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/DashboardView.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/DashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/LoginView.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/InventoryView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/MainWindow.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/LoginView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/OrdersView.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/gordinskij/RiderProjects/AutoService Master/AutoService Master/Views/SettingsView.axaml]
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/OrdersView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/nasty/source/repos/AutoServiceMaster/AutoService Master/Views/SettingsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

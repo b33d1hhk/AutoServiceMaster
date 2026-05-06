@@ -28,5 +28,25 @@
     <x:String x:Key="Dark">dark</x:String>
     <x:String x:Key="Light">light</x:String>
     <x:String x:Key="Language">Interface language</x:String>
+	<x:String x:Key="Txt_Inventory">Inventory</x:String>
+	<x:String x:Key="InventoryTitle">Parts Inventory</x:String>
+	<x:String x:Key="PartName">Part Name</x:String>
+	<x:String x:Key="PartArticle">Article</x:String>
+	<x:String x:Key="PartPrice">Price</x:String>
+	<x:String x:Key="PartQuantity">In Stock</x:String>
+	<x:String x:Key="AddPart">Add Part</x:String>
+	<x:String x:Key="PartNameReq">Name *</x:String>
+	<x:String x:Key="PartArticleReq">Article *</x:String>
+	<x:String x:Key="PartPriceReq">Selling Price (₴) *</x:String>
+	<x:String x:Key="PartQuantityReq">Quantity (pcs) *</x:String>
+	<x:String x:Key="SavePart">Save to Inventory</x:String>
+	<x:String x:Key="NewOrder">New Order</x:String>
+	<x:String x:Key="SelectClientReq">Select Client *</x:String>
+	<x:String x:Key="OrderDescReq">Work Description *</x:String>
+	<x:String x:Key="OrderPrice">Price (₴)</x:String>
+	<x:String x:Key="SaveOrderBtn">Save Order</x:String>
+	<x:String x:Key="ClientWord">Client</x:String>
+	<x:String x:Key="DescWord">Description</x:String>
+	<x:String x:Key="StatusWord">Status</x:String>
     
 </ResourceDictionary>

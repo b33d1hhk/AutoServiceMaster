@@ -10,7 +10,8 @@ public partial class MainWindow : Window
     private ClientsView? _clientsView;
     private SettingsView? _settingsView;
     private OrdersView? _ordersView;
-    
+    private InventoryView? _inventoryView;
+
     public MainWindow()
     {
         InitializeComponent();
@@ -30,6 +31,7 @@ public partial class MainWindow : Window
             _clientsView = new ClientsView();
             _settingsView = new SettingsView();
             _ordersView = new OrdersView();
+            _inventoryView = new InventoryView();
             
             MainContentArea.Content = _dashboardView;
         };
@@ -55,6 +57,12 @@ public partial class MainWindow : Window
     {
         MainContentArea.Content = _ordersView;
     }
+
+    private void NavInventory_Click(object sender, RoutedEventArgs e)
+    {
+        MainContentArea.Content = _inventoryView;
+    }
+
     private void NavSettings_Click(object sender, RoutedEventArgs e)
     {
         MainContentArea.Content = _settingsView;

@@ -27,5 +27,25 @@
     <x:String x:Key="Dark">Темна</x:String>
     <x:String x:Key="Light">Світла</x:String>
     <x:String x:Key="Language">Мова інтерфейсу</x:String>
+	<x:String x:Key="Txt_Inventory">Склад</x:String>
+	<x:String x:Key="InventoryTitle">Склад запчастин</x:String>
+	<x:String x:Key="PartName">Назва деталі</x:String>
+	<x:String x:Key="PartArticle">Артикул</x:String>
+	<x:String x:Key="PartPrice">Ціна</x:String>
+	<x:String x:Key="PartQuantity">Залишок</x:String>
+	<x:String x:Key="AddPart">Додати деталь</x:String>
+	<x:String x:Key="PartNameReq">Назва *</x:String>
+	<x:String x:Key="PartArticleReq">Артикул *</x:String>
+	<x:String x:Key="PartPriceReq">Ціна продажу (₴) *</x:String>
+	<x:String x:Key="PartQuantityReq">Кількість (шт) *</x:String>
+	<x:String x:Key="SavePart">Зберегти на склад</x:String>
+	<x:String x:Key="NewOrder">Нове замовлення</x:String>
+	<x:String x:Key="SelectClientReq">Оберіть клієнта *</x:String>
+	<x:String x:Key="OrderDescReq">Опис робіт *</x:String>
+	<x:String x:Key="OrderPrice">Вартість (₴)</x:String>
+	<x:String x:Key="SaveOrderBtn">Зберегти замовлення</x:String>
+	<x:String x:Key="ClientWord">Клієнт</x:String>
+	<x:String x:Key="DescWord">Опис робіт</x:String>
+	<x:String x:Key="StatusWord">Статус</x:String>
     
 </ResourceDictionary>

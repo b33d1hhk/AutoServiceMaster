@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:models="using:AutoService_Master.Models"
+             xmlns:vm="using:AutoService_Master.ViewModels"
+             x:DataType="vm:InventoryViewModel"
+             x:Class="AutoService_Master.Views.InventoryView">
+
+	<Grid ColumnDefinitions="*, 300" Margin="20">
+
+		<Grid Grid.Column="0" RowDefinitions="Auto, *" Margin="0,0,20,0">
+			<TextBlock Grid.Row="0" Text="{DynamicResource InventoryTitle}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+
+			<ListBox Grid.Row="1" ItemsSource="{Binding Parts}" Background="Transparent" BorderThickness="0">
+				<ListBox.ItemTemplate>
+					<DataTemplate x:DataType="models:Part">
+						<Border Background="#2D2D30" CornerRadius="8" Margin="0,0,0,10" Padding="15">
+							<Grid ColumnDefinitions="2*, 1.5*, 1*, 1*, Auto">
+								<StackPanel Grid.Column="0" VerticalAlignment="Center">
+									<TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16" Foreground="White" TextWrapping="Wrap"/>
+									<TextBlock Text="{DynamicResource PartName}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="1" VerticalAlignment="Center">
+									<TextBlock Text="{Binding Article}" Foreground="#E0E0E0"/>
+									<TextBlock Text="{DynamicResource PartArticle}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="2" VerticalAlignment="Center">
+									<TextBlock Text="{Binding Price, StringFormat='₴ {0}'}" Foreground="#47D16E" FontWeight="SemiBold"/>
+									<TextBlock Text="{DynamicResource PartPrice}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="3" VerticalAlignment="Center">
+									<TextBlock Text="{Binding Quantity, StringFormat='{}{0} шт.'}" Foreground="#4AA9FF" FontWeight="SemiBold"/>
+									<TextBlock Text="{DynamicResource PartQuantity}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="4" VerticalAlignment="Center">
+									<Button Content="❌" Background="Transparent" ToolTip.Tip="Видалити"
+                                            IsVisible="{Binding $parent[UserControl].((vm:InventoryViewModel)DataContext).IsAdmin}"
+                                            Command="{Binding $parent[UserControl].((vm:InventoryViewModel)DataContext).DeletePartCommand}"
+                                            CommandParameter="{Binding}"/>
+								</StackPanel>
+							</Grid>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+
+		<Border Grid.Column="1" Background="#252526" CornerRadius="10" Padding="20" VerticalAlignment="Top">
+			<StackPanel Spacing="15">
+				<TextBlock Text="{DynamicResource AddPart}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource PartNameReq}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewName}" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource PartArticleReq}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewArticle}" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource PartPriceReq}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewPrice}" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource PartQuantityReq}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewQuantity}" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<Button Content="{DynamicResource SavePart}"
+                        Command="{Binding SavePartCommand}"
+                        Background="#4AA9FF" Foreground="White"
+                        FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                        Padding="10" Margin="0,15,0,0" CornerRadius="6"/>
+			</StackPanel>
+		</Border>
+	</Grid>
+</UserControl>

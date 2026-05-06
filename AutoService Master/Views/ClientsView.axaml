@@ -7,66 +7,78 @@
              x:DataType="vm:ClientsViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AutoService_Master.Views.ClientsView">
-    
-    <Grid ColumnDefinitions="*, 300" Margin="20">
-        
-        <Grid Grid.Column="0" RowDefinitions="Auto, *" Margin="0,0,20,0">
-            <TextBlock Grid.Row="0" Text="{DynamicResource Txt_Clients}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
-            
-            <ListBox Grid.Row="1" ItemsSource="{Binding Clients}" Background="Transparent" BorderThickness="0">
-                <ListBox.ItemTemplate>
-                    <DataTemplate x:DataType="models:Client">
-                        <Border Background="#2D2D30" CornerRadius="8" Margin="0,0,0,10" Padding="15">
-                            <Grid ColumnDefinitions="2*, 1.5*, 2*, Auto">
-                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding FullName}" FontWeight="Bold" FontSize="16" Foreground="White"/>
-                                    <TextBlock Text="{DynamicResource FullName}" FontSize="12" Foreground="#888888"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding PhoneNumber}" Foreground="#E0E0E0"/>
-                                    <TextBlock Text="{DynamicResource Phone}" FontSize="12" Foreground="#888888"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding CarInfo}" Foreground="#4AA9FF" FontWeight="SemiBold"/>
-                                    <TextBlock Text="{DynamicResource Car}" FontSize="12" Foreground="#888888"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
-                                    <Button Content="✏️" Background="Transparent" ToolTip.Tip="{DynamicResource Edit}"
+
+	<Grid ColumnDefinitions="*, 300" Margin="20">
+
+		<Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" Margin="0,0,20,0">
+			<TextBlock Grid.Row="0" Text="{DynamicResource Txt_Clients}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,15"/>
+
+			<TextBox Grid.Row="1" Text="{Binding SearchQuery}"
+                     Watermark="Пошук за ім'ям або телефоном..."
+                     Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"
+                     Padding="10" CornerRadius="6" Margin="0,0,0,15"/>
+
+			<ListBox Grid.Row="2" ItemsSource="{Binding Clients}" Background="Transparent" BorderThickness="0">
+				<ListBox.ItemTemplate>
+					<DataTemplate x:DataType="models:Client">
+						<Border Background="#2D2D30" CornerRadius="8" Margin="0,0,0,10" Padding="15">
+							<Grid ColumnDefinitions="2*, 1.5*, 2*, Auto">
+								<StackPanel Grid.Column="0" VerticalAlignment="Center">
+									<TextBlock Text="{Binding FullName}" FontWeight="Bold" FontSize="16" Foreground="White"/>
+									<TextBlock Text="{DynamicResource FullName}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="1" VerticalAlignment="Center">
+									<TextBlock Text="{Binding PhoneNumber}" Foreground="#E0E0E0"/>
+									<TextBlock Text="{DynamicResource Phone}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="2" VerticalAlignment="Center">
+									<TextBlock Text="{Binding CarInfo}" Foreground="#4AA9FF" FontWeight="SemiBold"/>
+									<TextBlock Text="{DynamicResource Car}" FontSize="12" Foreground="#888888"/>
+								</StackPanel>
+
+								<StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+									<Button Content="✏️" Background="Transparent" ToolTip.Tip="{DynamicResource Edit}"
                                             Command="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).EditClientCommand}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="❌" Background="Transparent" ToolTip.Tip="{DynamicResource Delete}"
+									<Button Content="❌" Background="Transparent" ToolTip.Tip="{DynamicResource Delete}"
                                             IsVisible="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).IsAdmin}"
                                             Command="{Binding $parent[UserControl].((vm:ClientsViewModel)DataContext).DeleteClientCommand}"
                                             CommandParameter="{Binding}"/>
-                                </StackPanel>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </Grid>
-        
-        <Border Grid.Column="1" Background="#252526" CornerRadius="10" Padding="20" VerticalAlignment="Top">
-            <StackPanel Spacing="15">
-                <TextBlock Text="{DynamicResource AddNewClient}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
-                <StackPanel>
-                    <TextBlock Text="{DynamicResource FullNameClient}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
-                    <TextBox Text="{Binding NewFullName}" Watermark="Напр. Іванов Іван" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="{DynamicResource PhoneNumber}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
-                    <TextBox Text="{Binding NewPhone}" Watermark="+380..." Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="{DynamicResource CarModel}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
-                    <TextBox Text="{Binding NewCarInfo}" Watermark="Напр. Toyota Camry" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
-                </StackPanel>
-                <Button Content="{DynamicResource SaveClient}" 
+								</StackPanel>
+							</Grid>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+
+		<Border Grid.Column="1" Background="#252526" CornerRadius="10" Padding="20" VerticalAlignment="Top">
+			<StackPanel Spacing="15">
+				<TextBlock Text="{DynamicResource AddNewClient}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource FullNameClient}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewFullName}" Watermark="Напр. Іванов Іван" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource PhoneNumber}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewPhone}" Watermark="+380..." Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<StackPanel>
+					<TextBlock Text="{DynamicResource CarModel}" FontSize="12" Foreground="#AAAAAA" Margin="0,0,0,5"/>
+					<TextBox Text="{Binding NewCarInfo}" Watermark="Напр. Toyota Camry" Background="#1E1E1E" Foreground="White" BorderBrush="#3E3E42"/>
+				</StackPanel>
+
+				<Button Content="{DynamicResource SaveClient}"
                         Command="{Binding SaveClientCommand}"
-                        Background="#4AA9FF" Foreground="White" 
+                        Background="#4AA9FF" Foreground="White"
                         FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                         Padding="10" Margin="0,15,0,0" CornerRadius="6"/>
-            </StackPanel>
-        </Border>
-    </Grid>
+			</StackPanel>
+		</Border>
+	</Grid>
 </UserControl>

@@ -2,44 +2,75 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="using:AutoService_Master.Models"
              xmlns:vm="using:AutoService_Master.ViewModels"
              x:DataType="vm:DashboardViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AutoService_Master.Views.DashboardView">
-    <ScrollViewer>
-        <StackPanel Margin="30" Spacing="20">
-            
-            <TextBlock Text="{DynamicResource Txt_Dashboard}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
 
-            <WrapPanel ItemWidth="250" ItemHeight="130">
-                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20" 
-                        BoxShadow="0 4 15 0 #11000000">
-                    <StackPanel>
-                        <TextBlock Text="{DynamicResource TotalClients}" FontSize="14" Foreground="#AAAAAA"/>
-                        <TextBlock Text="{Binding TotalClients}" FontSize="36" FontWeight="Bold" Foreground="#4AA9FF" Margin="0,10,0,0"/>
-                    </StackPanel>
-                </Border>
-                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20"
-                        BoxShadow="0 4 15 0 #11000000">
-                    <StackPanel>
-                        <TextBlock Text="{DynamicResource CarRepair}" FontSize="14" Foreground="#AAAAAA"/>
-                        <TextBlock Text="{Binding ActiveOrders}" FontSize="36" FontWeight="Bold" Foreground="#FFB020" Margin="0,10,0,0"/>
-                    </StackPanel>
-                </Border>
-                <Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20"
-                        BoxShadow="0 4 15 0 #11000000">
-                    <StackPanel>
-                        <TextBlock Text="{DynamicResource Checkout}" FontSize="14" Foreground="#AAAAAA"/>
-                        <TextBlock Text="{Binding TodayRevenue}" FontSize="36" FontWeight="Bold" Foreground="#47D16E" Margin="0,10,0,0"/>
-                    </StackPanel>
-                </Border>
-            </WrapPanel>
-            <TextBlock Text="{DynamicResource RecentAction}" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="0,20,0,10"/>
-            <Border Background="#252526" CornerRadius="12" Padding="20" Height="200">
-                <TextBlock Text="{DynamicResource ListRecentAction}" 
-                           Foreground="#808080" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Border>
+	<ScrollViewer>
+		<StackPanel Margin="30" Spacing="20">
 
-        </StackPanel>
-    </ScrollViewer>
+			<TextBlock Text="{DynamicResource Txt_Dashboard}" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+			<WrapPanel ItemWidth="250" ItemHeight="130">
+				<Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20" BoxShadow="0 4 15 0 #11000000">
+					<StackPanel>
+						<TextBlock Text="{DynamicResource TotalClients}" FontSize="14" Foreground="#AAAAAA"/>
+						<TextBlock Text="{Binding TotalClients}" FontSize="36" FontWeight="Bold" Foreground="#4AA9FF" Margin="0,10,0,0"/>
+					</StackPanel>
+				</Border>
+
+				<Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20" BoxShadow="0 4 15 0 #11000000">
+					<StackPanel>
+						<TextBlock Text="{DynamicResource CarRepair}" FontSize="14" Foreground="#AAAAAA"/>
+						<TextBlock Text="{Binding ActiveOrders}" FontSize="36" FontWeight="Bold" Foreground="#FFB020" Margin="0,10,0,0"/>
+					</StackPanel>
+				</Border>
+
+				<Border Background="#2D2D30" CornerRadius="12" Padding="20" Margin="0,0,20,20" BoxShadow="0 4 15 0 #11000000">
+					<StackPanel>
+						<TextBlock Text="{DynamicResource Checkout}" FontSize="14" Foreground="#AAAAAA"/>
+						<TextBlock Text="{Binding TodayRevenue}" FontSize="36" FontWeight="Bold" Foreground="#47D16E" Margin="0,10,0,0"/>
+					</StackPanel>
+				</Border>
+			</WrapPanel>
+
+			<TextBlock Text="Розумна закупівля (Аналітика)" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="0,10,0,10"/>
+			<Border Background="#252526" CornerRadius="12" Padding="20" MinHeight="80" Margin="0,0,0,20" BorderBrush="#FFB020" BorderThickness="1">
+				<ListBox ItemsSource="{Binding PurchasingRecommendations}" Background="Transparent" BorderThickness="0">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding}" Foreground="#E0E0E0" TextWrapping="Wrap" Margin="0,0,0,8"/>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Border>
+
+			<Button Content="💾 Експорт звіту (report.txt)"
+                    Command="{Binding ExportReportCommand}"
+                    Background="#47D16E" Foreground="White" FontWeight="Bold"
+                    Padding="15,8" CornerRadius="6" HorizontalAlignment="Left" Margin="0,-10,0,20"/>
+
+			<TextBlock Text="{DynamicResource RecentAction}" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="0,20,0,10"/>
+
+			<Border Background="#252526" CornerRadius="12" Padding="20" Height="250">
+				<ListBox ItemsSource="{Binding RecentOrders}" Background="Transparent" BorderThickness="0">
+					<ListBox.ItemTemplate>
+						<DataTemplate x:DataType="models:Order">
+							<Grid ColumnDefinitions="150, *, 150" Margin="0,0,0,15">
+								<TextBlock Grid.Column="0" Text="{Binding CreatedAt, StringFormat='{}{0:dd.MM.yyyy HH:mm}'}" Foreground="#888888" VerticalAlignment="Center"/>
+								<StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+									<TextBlock Text="{DynamicResource ClientWord}" Foreground="#AAAAAA"/>
+									<TextBlock Text="{Binding ClientName}" Foreground="White" FontWeight="SemiBold"/>
+								</StackPanel>
+								<TextBlock Grid.Column="2" Text="{Binding Status}" Foreground="#FFB020" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+							</Grid>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Border>
+
+		</StackPanel>
+	</ScrollViewer>
 </UserControl>
